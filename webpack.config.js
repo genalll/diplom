@@ -41,7 +41,7 @@ module.exports = {
     },
     {
       test: /\.(woff|woff2|ttf)$/,
-      use: "file-loader"
+      use: "file-loader?name=./font/[name].[ext]"
     },
     {
       test: /\.(gif|png|jpg|jpeg|svg)?$/,
@@ -62,6 +62,16 @@ module.exports = {
       inject: false,
       template: './src/index.html',
       filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/page/projektinfo.html',
+      filename: 'projektinfo.html'
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/page/analitika.html',
+      filename: 'analitika.html'
     }),
     new WebpackMd5Hash(),
     new MiniCssExtractPlugin({ filename: 'style.[contenthash].css' }),
