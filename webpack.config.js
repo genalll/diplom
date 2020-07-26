@@ -8,10 +8,12 @@ const isDev = process.env.NODE_ENV === 'development';
 
 
 module.exports = {
-  entry: "./src/script.js",
+  entry:{ script:"./src/js/script.js",
+  analitika:"./src/js/analitikascript.js",
+  infoscript:"./src/js/infoscript.js"},
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    path: path.resolve(__dirname , './dist'),
+    filename: 'js/[name].[chunkhash].js'
   },
 
   module: {
@@ -66,13 +68,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/page/projektinfo.html',
+      template: './src/projektinfo.html',
       filename: 'projektinfo.html',
       favicon: './src/favicon.png'
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/page/analitika.html',
+      template: './src/analitika.html',
       filename: 'analitika.html',
       favicon: './src/favicon.png'
     }),
