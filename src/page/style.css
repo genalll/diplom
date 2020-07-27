@@ -1,30 +1,6 @@
 @import url("../font/font.css");
+@import url("../blocks/header/header.css");
+@import url("../blocks/search/search.css");
+@import url("../blocks/logo/logo.css");
+@import url("../blocks/meny/meny.css");
 
-h1{
-font-family: Roboto Slab;
-font-style: normal;
-font-weight: normal;
-font-size: 60px;
-line-height: 64px;
-color: #FFFFFF;
-}
-.menu__link{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-    color: #FFFFFF;
-}
-
-.logo{
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-line-height: 24px;
-color: #FFFFFF;
-}
-body{
-    background: url(../images/logoimage.png);
-}
