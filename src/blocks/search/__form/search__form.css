@@ -1,0 +1,7 @@
+.search__form{
+    margin-top: 64px;
+    display: flex;
+    flex-direction: row;
+    max-width: 608px;
+    height: 64px;
+}
