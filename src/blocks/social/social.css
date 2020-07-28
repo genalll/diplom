@@ -1,0 +1,9 @@
+@import url("./__linck/social__link.css");
+@import url("./__linck/social__link_github.css");
+@import url("./__linck/social__link_faceboock.css");
+.social{
+     display: flex;
+     list-style-type: none;
+     z-index: 20;
+     margin-right: 40px;
+}

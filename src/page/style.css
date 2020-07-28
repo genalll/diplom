@@ -5,4 +5,7 @@
 @import url("../blocks/meny/meny.css");
 @import url("../blocks/author/author.css");
 @import url("../blocks/footer/footer.css");
+@import url("../blocks/social/social.css");
+@import url("../blocks/search-result/search-result.css");
+@import url("../blocks/noresult/noresult.css");
 
