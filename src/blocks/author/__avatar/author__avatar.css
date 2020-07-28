@@ -1,0 +1,11 @@
+.author__avatar{
+    width: 464px;
+    height: 464px;
+    background: url("../../../images/avatar.jpg");
+    background-size: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 80px;
+    margin-left: 104px;
+    margin-right: 56px;
+}
