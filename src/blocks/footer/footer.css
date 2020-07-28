@@ -1,0 +1,10 @@
+@import url("../footer/__copyright/footer__copyright.css");
+.footer{
+    display: flex;
+    max-width: 1440px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: flex-start;
+    align-items: center;
+}

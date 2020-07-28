@@ -1,5 +1,6 @@
 @import url("../meny/__link/meny__link.css");
 @import url("../meny/__link/meny__link_page.css");
+@import url("../meny/__link/meny__link_black.css");
 .meny{
     margin-right: 101px;
     list-style-type: none;
