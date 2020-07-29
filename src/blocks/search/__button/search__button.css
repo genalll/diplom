@@ -5,7 +5,7 @@
     width: 168px;
     height: 64px;
     margin-left: -168px;
-    background: #347EFF;
+    background: #2F71E5;
     border-radius: 100px;
     box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
     font-family: Roboto;
@@ -14,4 +14,10 @@
     font-size: 18px;
     line-height: 24px;
     color: #FFFFFF;
+}
+.search__button:hover{
+    background-color: #347EFF;
+}
+.search__button:active{
+    background-color: #2A65CC;
 }
