@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css[2] %>">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
-<body>
+<body class="page">
     <header class="header header_black">
         <a class="logo logo_black" href="#">NewsAnalyzer</a>
         <nav>
@@ -48,6 +48,33 @@
             </div>
         </div>
     </section>
+   
+    <section class="author">
+        <div class="author__avatar"></div>
+        <div class="author__text-contener">
+        <h2 class="author__info">Об авторе</h2>
+        <p class="author__description">Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.
+            </p>
+        <p class="author__description">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.
+
+        </p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2020.Аликин Г.А.</p>
+        <nav>
+        <ul class="meny">
+            <li><a class="meny__link meny__link_black" href="index.html">Главная</a></li>
+            <li><a class="meny__link meny__link_black" href="projektinfo.html">О проекте</a></li>
+            <li><a class="meny__link meny__link_black" href="https://praktikum.yandex.ru">Яндекс.Практикум</a></li>
+        </ul>
+        </nav>
+        <ul class="social">
+            <li><a class="social__link social__link_github" href="https://github.com/genalll"></a></li>
+            <li><a class="social__link social__link_faceboock" href="https://www.facebook.com"></a></li>
+        </ul>
+    </footer>
 
  <script src="<%= htmlWebpackPlugin.files.js[2]%>"></script>   
 </body>

@@ -10,4 +10,7 @@
 @import url("../blocks/noresult/noresult.css");
 @import url("../blocks/result-container/result-container.css");
 @import url("../blocks/card/card.css");
-
+.page{
+    width: 100%;
+    margin: 0 auto;
+}
