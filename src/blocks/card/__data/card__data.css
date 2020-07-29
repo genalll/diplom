@@ -1,0 +1,14 @@
+.card__data{
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #B6BCBF;
+}

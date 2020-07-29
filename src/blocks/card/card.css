@@ -1,0 +1,12 @@
+@import url("./__image-container/card__image-container.css");
+@import url("./__data/card__data.css");
+@import url("./__title/card__title.css");
+@import url("./__description/card__description.css");
+@import url("./__resurs/card__resurs.css");
+.card{
+    width:400px;
+    height: 567px;
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}

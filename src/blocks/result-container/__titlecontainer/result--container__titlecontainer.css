@@ -1,0 +1,10 @@
+.result--container__titlecontainer{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   min-width: 86%;
+   margin-left:100px;
+   margin-right:100px;
+
+}

@@ -2,11 +2,11 @@
 @import url("./__description/search-result__description.css");
 .search-result{
     display: flex;
+    display:none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     max-width: 1440px;
-    height: 282px;
     background: #F5F6F7;
     margin-left: auto;
     margin-right: auto;

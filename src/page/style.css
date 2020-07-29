@@ -8,4 +8,6 @@
 @import url("../blocks/social/social.css");
 @import url("../blocks/search-result/search-result.css");
 @import url("../blocks/noresult/noresult.css");
+@import url("../blocks/result-container/result-container.css");
+@import url("../blocks/card/card.css");
 
