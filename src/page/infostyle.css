@@ -1,4 +1,6 @@
+@import url("../vendor/normalise.css");
 @import url("../font/font.css");
-body{
-    background-color: black;
-}
+@import url("../blocks/logo/logo.css");
+@import url("../blocks/meny/meny.css");
+@import url("../blocks/header/header.css");
+
