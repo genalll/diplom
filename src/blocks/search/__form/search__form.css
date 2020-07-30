@@ -1,7 +1,9 @@
 .search__form{
+    position: relative;
     margin-top: 64px;
     display: flex;
     flex-direction: row;
     max-width: 608px;
     height: 64px;
+    z-index: 2;
 }
