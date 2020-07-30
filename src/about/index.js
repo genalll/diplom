@@ -1,6 +1,6 @@
 import "../vendor/normalise.css";
-import Swiper from '../../node_modules/swiper/swiper-bundle.js';
 import "../page/infostyle.css";
+import Swiper from '../../node_modules/swiper/swiper-bundle.js';
 
 console.log("info");
 
