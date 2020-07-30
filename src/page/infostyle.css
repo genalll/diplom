@@ -8,6 +8,7 @@
 @import url("../blocks/author/author.css");
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/social/social.css");
+@import url("../blocks/swiper/swiper.css");
 .page{
     width: 100%;
     margin: 0 auto;

@@ -7,6 +7,8 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
 
+
+
 module.exports = {
   entry:{ script:"./src/index.js",
   analitika:"./src/analytics/index.js",
@@ -91,7 +93,6 @@ module.exports = {
       },
       canPrint: true
     })
-
   ]
 
 
