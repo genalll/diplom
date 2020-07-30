@@ -1,0 +1,13 @@
+@import url(".//__link/titlecontainer__link.css");
+@import url(".//__title/titlecontainer__title.css");
+@import url("../titlecontainer/titlecontener_github.css");
+.titlecontainer{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   min-width: 86%;
+   margin-left:100px;
+   margin-right:100px;
+
+}

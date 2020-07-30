@@ -1,0 +1,12 @@
+.slide__image-container{
+    width: 64px;
+    height: 64px;
+    margin-top: 16px;
+    margin-left: 24px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border-radius: 32px;
+    background-image: url("../../../images/image-04.png");
+    background-size: 100% auto;
+    background-position: center;
+}

@@ -10,6 +10,9 @@
 @import url("../blocks/social/social.css");
 @import url("../blocks/swiper/swiper.css");
 @import url("../../node_modules/swiper/swiper-bundle.css");
+@import url("../blocks/slide/slide.css");
+@import url("../blocks/titlecontainer/titlecontainer.css");
+@import url("../blocks/github/github.css");
 .page{
     width: 100%;
     margin: 0 auto;

@@ -1,9 +1,12 @@
-.swiper-container {
+.swiper-container.swiperses {
+    position: relative;
     max-width: 1440px;
     height: 606px;
     background: #F5F6F7;
+    z-index: auto;
 }
 .swiper-pagination{
+    z-index: 100;
     padding-bottom: 80px;
 }
 .swiper-pagination-bullet-active{
@@ -20,6 +23,7 @@
     color: white;
     --swiper-navigation-size:14px;
     font-weight: 900 ;
+    z-index: 50;
 }
 .swiper-button-next.swiperskiy{
     display: flex;
@@ -32,16 +36,12 @@
     color: white;
     --swiper-navigation-size:14px;
     font-weight: 900 ;
-}
-.slide{
-    width:400px;
-    height: 288px;
-    background: #FFFFFF;
-    border-radius: 16px;
+    z-index: 100;
 }
 .swiper-slide{
       display: flex;
       justify-content: center;
       align-items: center;
       padding-bottom: 136px;
+      z-index: 10;
 }
