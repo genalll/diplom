@@ -9,6 +9,7 @@
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/social/social.css");
 @import url("../blocks/swiper/swiper.css");
+@import url("../../node_modules/swiper/swiper-bundle.css");
 .page{
     width: 100%;
     margin: 0 auto;
