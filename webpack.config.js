@@ -68,22 +68,25 @@ module.exports = {
       inject: false,
       template: './src/index.html',
       filename: 'index.html',
+      chunks:["script"],
       favicon: './src/favicon.png'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/projektinfo.html',
       filename: 'projektinfo.html',
+      chunks:["infoscript"],
       favicon: './src/favicon.png'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/analitika.html',
+      chunks:["analitika"],
       filename: 'analitika.html',
       favicon: './src/favicon.png'
     }),
     new WebpackMd5Hash(),
-    new MiniCssExtractPlugin({ filename: 'style.[contenthash].css' }),
+    new MiniCssExtractPlugin({ filename: './css/[name].[contenthash].css' }),
     new webpack.DefinePlugin({
       'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
