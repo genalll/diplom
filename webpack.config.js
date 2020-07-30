@@ -14,7 +14,7 @@ module.exports = {
   analitika:"./src/analytics/index.js",
   infoscript:"./src/about/index.js"},
   output: {
-    path: path.resolve(__dirname , './dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'js/[name].[chunkhash].js'
   },
 
@@ -36,7 +36,9 @@ module.exports = {
       {
         loader:'css-loader',
         options: {
-            importLoaders: 2
+            importLoaders: 2,
+
+            
         } 
     },
         'postcss-loader'],
