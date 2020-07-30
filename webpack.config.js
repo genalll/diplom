@@ -14,8 +14,8 @@ module.exports = {
   analitika:"./src/analytics/index.js",
   infoscript:"./src/about/index.js"},
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: 'js/[name].[chunkhash].js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: './js/[name].[chunkhash].js'
   },
 
   module: {
@@ -47,15 +47,17 @@ module.exports = {
     },
     {
       test: /\.(woff|woff2|ttf)$/,
+      sideEffects: true,
       use: "file-loader?name=./font/[name].[ext]"
     },
     {
       test: /\.(gif|png|jpg|jpeg|svg)?$/,
+      sideEffects: true,
       use: [
         'file-loader?name=./images/[name].[ext]', // указали папку, куда складывать изображения
         {
           loader: 'image-webpack-loader',
-          options: { name: 'assets/img/[name].[ext]' }
+          options: { name: './img/[name].[ext]' }
         },
       ]
     }
@@ -64,6 +66,8 @@ module.exports = {
   },
 
   plugins: [
+    new WebpackMd5Hash(),
+    new MiniCssExtractPlugin({filename: '[name].[contenthash].css'  }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
@@ -85,8 +89,7 @@ module.exports = {
       filename: 'analitika.html',
       favicon: './src/favicon.png'
     }),
-    new WebpackMd5Hash(),
-    new MiniCssExtractPlugin({ filename: './css/[name].[contenthash].css' }),
+    
     new webpack.DefinePlugin({
       'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
