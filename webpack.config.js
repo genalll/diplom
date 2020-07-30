@@ -35,7 +35,7 @@ module.exports = {
       use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
       {
         loader:'css-loader',
-        options: {
+        options: { 
             importLoaders: 2,
 
             
@@ -48,7 +48,7 @@ module.exports = {
     {
       test: /\.(woff|woff2|ttf)$/,
       sideEffects: true,
-      use: "file-loader?name=./font/[name].[ext]"
+      use: 'file-loader?name=./font/[name].[ext]'  
     },
     {
       test: /\.(gif|png|jpg|jpeg|svg)?$/,
@@ -67,7 +67,7 @@ module.exports = {
 
   plugins: [
     new WebpackMd5Hash(),
-    new MiniCssExtractPlugin({filename: '[name].[contenthash].css'  }),
+    new MiniCssExtractPlugin({filename: '[name].[contenthash].css',publicPath: '../'}),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
