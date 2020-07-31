@@ -1,3 +1,5 @@
+@import url("./__blur/github__blur.css");
+@import url("./__blur/github__blur_right.css");
 .github{
     position: relative;
     max-width: 1440px;
