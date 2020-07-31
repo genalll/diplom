@@ -32,7 +32,12 @@ module.exports = {
     },
     {
       test: /\.css$/,
-      use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+      use: [(isDev ? 'style-loader' : {
+        loader: MiniCssExtractPlugin.loader,
+        options: {
+          publicPath: '../',
+        },
+      }),
       {
         loader:'css-loader',
         options: { 
@@ -67,7 +72,7 @@ module.exports = {
 
   plugins: [
     new WebpackMd5Hash(),
-    new MiniCssExtractPlugin({filename: '[name].[contenthash].css'}),
+    new MiniCssExtractPlugin({filename: './css/[name].[contenthash].css',}),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
