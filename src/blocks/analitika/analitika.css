@@ -1,0 +1,15 @@
+@import url("./__bread-crumb/analitika-titl__bread-crumb.css");
+@import url("./__link/analitika-title__link.css");
+@import url("./__link/analitika-title__link_last.css");
+@import url("./__title/analitika-title__title.css");
+@import url("./__week/analitika-title__week.css");
+@import url("./__week-number/analitika-title__week-number.css");
+.analitika{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 346px;
+}
