@@ -16,7 +16,20 @@
    margin-left: auto;
    margin-right: auto;
    background-image: url("../../images/logoimage.jpg");
-   background-size: 100% auto;
+   background-size: cover;
+   background-position: center;
    background-repeat: no-repeat;
    z-index: 5;
+}
+
+@media screen and (min-width:640px) and  (max-width:778px){
+   .search{
+       height: 400px;
+   }
+}
+
+@media screen and (min-width:320px) and  (max-width:639px){
+   .search{
+      height: 536px;
+   }
 }
