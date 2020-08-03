@@ -1,0 +1,9 @@
+.analitika-table__container{
+    display: flex;
+    flex-direction: row;
+    width: calc(100%-(208px+86px));
+    justify-content: flex-start;
+    flex-grow: 1;
+    margin-left: 104px;
+    margin-right: auto;
+}

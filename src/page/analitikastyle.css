@@ -6,6 +6,7 @@
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/social/social.css");
 @import url("../blocks/analitika/analitika.css");
+@import url("../blocks/analitika-table/analitika-table.css");
 .page{
         width: 100%;
         margin: 0 auto;

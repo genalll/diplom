@@ -1,0 +1,30 @@
+
+@import url("../analitika-table/__title/analitika-table__title.css");
+@import url("../analitika-table/__data/analitika-table__data.css");
+@import url("../analitika-table/__number/analitika-table__number.css");
+@import url("../analitika-table/__line/analitika-table_line.css");
+@import url("../analitika-table/__percent-container/analitika-table__percent-container.css");
+@import url("../analitika-table/__percent/analitika-table__percent.css");
+@import url("../analitika-table/__container/analitika-table__container.css");
+@import url("../analitika-table/__week-container/analitika-table__week-container.css");
+@import url("../analitika-table/__week-day/analitika-table__week-day.css");
+@import url("../analitika-table/__grafik-container/analitika-table__grafik-container.css");
+@import url("../analitika-table/__scale/analitika-table__scale.css");
+@import url("../analitika-table/__scale/analitika-table__scale_last.css");
+@import url("../analitika-table/__scale/analitika-table__scale_first.css");
+@import url("../analitika-table/__week-day/analitika-table__week-day_first.css");
+
+
+
+
+.analitika-table{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 1440px;
+    height: 866px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #F5F6F7;
+}

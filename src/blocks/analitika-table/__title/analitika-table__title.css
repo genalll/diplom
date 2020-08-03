@@ -1,0 +1,15 @@
+.analitika-table__title{
+    margin:0;
+    padding: 0;
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    color: #1A1B22;
+    max-width: 1232px;
+    margin-left: 104px;
+    margin-bottom: 48px;
+    margin-top: 80px;
+    flex-shrink: 1;
+}
