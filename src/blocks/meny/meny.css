@@ -2,7 +2,10 @@
 @import url("../meny/__link/meny__link_page.css");
 @import url("../meny/__link/meny__link_black.css");
 @import url("../meny/__link/meny__link_page_darck.css");
+@import url("../meny/meny_footer.css");
+@import url("../meny/__link/meny__link_footer.css");
 .meny{
+    position: relative;
     margin-right: 101px;
     list-style-type: none;
     display: flex;

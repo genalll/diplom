@@ -1,0 +1,22 @@
+
+@media screen and (min-width:944px) and  (max-width:1200px){
+    .meny.meny_footer{
+        margin-left: 40px;
+        margin-right:40px;
+    }
+}
+@media screen and (min-width:320px) and  (max-width:943px){
+    .meny.meny_footer{
+        margin-left: 0;
+        margin-right:0;
+    }
+}
+@media screen and (min-width:320px) and  (max-width:753px){
+    .meny.meny_footer{
+       padding-left: 0;
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       align-items: flex-start;
+    }
+}

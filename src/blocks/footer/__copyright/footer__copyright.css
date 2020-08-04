@@ -8,3 +8,33 @@
     margin-left: 100px;
     
 }
+
+@media screen and (min-width:944px) and  (max-width:1075px){
+    .footer__copyright{
+        margin-left: 40px;
+    }
+}
+@media screen and (min-width:700px) and  (max-width:943px){
+    .footer__copyright{
+        margin-left: 20px;
+    }
+}
+@media screen and (min-width:768px) and  (max-width:943px){
+    .footer__copyright{
+        margin-left: 40px;
+        font-family: Roboto regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: #B6BCBF;
+    }
+}
+@media screen and (min-width:320px) and  (max-width:753px){
+    .footer__copyright{
+        margin-left: 0;
+            display: flex;
+            flex-direction: column;
+            order: 10;
+        }
+    }
