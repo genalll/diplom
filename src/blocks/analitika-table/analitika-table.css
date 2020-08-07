@@ -28,3 +28,9 @@
     margin-right: auto;
     background: #F5F6F7;
 }
+
+@media screen and (min-width:320px) and  (max-width:599px){
+    .analitika-table{
+    height: 478px;
+    }
+}

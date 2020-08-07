@@ -7,3 +7,16 @@
     margin-top:40px;
     margin-left:104px;
 }
+
+@media screen and (min-width:600px) and  (max-width:800px){
+    .analitika-titl__bread-crumb{
+       margin-top: 32px;
+       margin-left: 40px;
+    }
+}
+
+@media screen and (min-width:320px) and  (max-width:599px){
+    .analitika-titl__bread-crumb{
+      display: none;
+    }
+}

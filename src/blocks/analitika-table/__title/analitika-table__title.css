@@ -13,3 +13,17 @@
     margin-top: 80px;
     flex-shrink: 1;
 }
+
+@media screen and (min-width:320px) and  (max-width:599px){
+    .analitika-table__title{
+        display: flex;
+        justify-content: flex-start;
+        max-width: 288px;
+        margin: 0 auto;
+        font-size: 22px;
+        line-height: 30px;
+        margin-left: 21px;
+        margin-bottom: 16px;
+        margin-top: 24px;
+    }
+}

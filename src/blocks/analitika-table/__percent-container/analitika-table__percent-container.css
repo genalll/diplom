@@ -14,3 +14,8 @@
     color: #B6BCBF;
     margin-top:16px;
 }
+@media screen and (min-width:320px) and  (max-width:599px){
+    .analitika-table__percent-container{
+       display:none;
+    }
+}

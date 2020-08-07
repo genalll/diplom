@@ -13,3 +13,14 @@
     margin-right: auto;
     height: 346px;
 }
+
+@media screen and (min-width:600px) and  (max-width:800px){
+    .analitika{
+       height: 270px;
+    }
+}
+@media screen and (min-width:320px) and  (max-width:599px){
+    .analitika{
+       height: 176px;
+    }
+}
