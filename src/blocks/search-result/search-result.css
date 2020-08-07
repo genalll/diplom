@@ -2,7 +2,7 @@
 @import url("./__description/search-result__description.css");
 .search-result{
     display: flex;
-    display:none;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;

@@ -13,6 +13,7 @@
 @import url("../blocks/slide/slide.css");
 @import url("../blocks/titlecontainer/titlecontainer.css");
 @import url("../blocks/github/github.css");
+@import url("../blocks/github-link-mini/github-link-mini.css");
 .page{
     width: 100%;
     margin: 0 auto;

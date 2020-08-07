@@ -1,6 +1,8 @@
 @import url(".//__link/titlecontainer__link.css");
 @import url(".//__title/titlecontainer__title.css");
 @import url("../titlecontainer/titlecontener_github.css");
+@import url("../titlecontainer/__title/titlecontainer__title_github.css");
+@import url("../titlecontainer/__link/titlecontainer__link_github.css");
 .titlecontainer{
    display: flex;
    flex-direction: row;
@@ -17,8 +19,15 @@
        flex-direction: column;
    }
 }
-@media screen and (min-width:320px) and  (max-width:780px){
+@media screen and (min-width:610px) and  (max-width:780px){
    .titlecontainer{
       max-width: 700px;
+   }
+}
+@media screen and (min-width:320px) and  (max-width:609px){
+   .titlecontainer{
+      max-width: 288px;
+      margin-right: auto;
+      margin-left: auto;
    }
 }

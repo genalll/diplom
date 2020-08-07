@@ -1,0 +1,11 @@
+@media screen and (min-width:610px) and  (max-width:800px){
+    .titlecontainer__link_github{
+         max-width: 152px;
+         text-align: right;
+    }
+}
+@media screen and (min-width:320px) and  (max-width:609px){
+    .titlecontainer__link_github{
+        display: none;
+    }
+}

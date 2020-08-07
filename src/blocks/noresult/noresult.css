@@ -3,6 +3,7 @@
 @import url("./__description/noresult__description.css");
 
 .noresult{
+    
     display: flex;
     display: none;
     flex-direction: column;

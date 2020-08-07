@@ -10,3 +10,15 @@
     line-height: 22px;
     color: #1A1B22;
 }
+
+@media screen and (min-width:610px) and  (max-width:896px){
+    .slide__description{ 
+        max-width: 296px;
+    }
+}
+@media screen and (min-width:320px) and  (max-width:609px){
+   
+        .slide__description{
+            max-width: 246px;
+        }
+}
