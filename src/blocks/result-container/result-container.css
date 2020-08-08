@@ -1,0 +1,13 @@
+@import url("./__cards/result-container__cards.css");
+@import url("./__more/result-container__more.css");
+
+.result-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+    background: #F5F6F7;
+    margin-left: auto;
+    margin-right: auto;
+}

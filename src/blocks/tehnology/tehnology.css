@@ -1,0 +1,36 @@
+@import url("./__title/tehnology__title.css");
+@import url("./__container/tehnology__container.css");
+@import url("./__card/tehnology__card.css");
+@import url("./__name/tehnology__name.css");
+@import url("./__icon/tehnology__icon.css");
+@import url("./__icon/tehnology__icon_bg_html.css");
+@import url("./__icon/tehnology__icon_bg_css.css");
+@import url("./__icon/tehnology__icon_bg_js.css");
+@import url("./__icon/tehnology__icon_bg_wp.css");
+.tehnology{
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-left: auto;
+    margin-right: auto;
+    background: #F5F6F7;
+}
+@media screen and (min-width:320px) and  (max-width:1044px){
+    .tehnology{
+        margin: 0 auto;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        
+    }
+ }
+
+
+@media screen and (min-width:320px) and  (max-width:699px){
+    .tehnology{
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+ }

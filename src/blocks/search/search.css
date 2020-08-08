@@ -1,0 +1,35 @@
+@import url("../search/__title/search__title.css");
+@import url("../search/__description/search__description.css");
+@import url("../search/__form/search__form.css");
+@import url("../search/__input/search__input.css");
+@import url("../search/__button/search__button.css");
+.search{
+   max-width: 608px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   position: relative;
+   max-width: 1440px;
+   margin-top:-81px;
+   height:567px;
+   margin-left: auto;
+   margin-right: auto;
+   background-image: url("../../images/logoimage.jpg");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   z-index: 5;
+}
+
+@media screen and (min-width:640px) and  (max-width:778px){
+   .search{
+       height: 400px;
+   }
+}
+
+@media screen and (min-width:320px) and  (max-width:639px){
+   .search{
+      height: 536px;
+   }
+}

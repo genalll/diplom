@@ -1,0 +1,27 @@
+.analitika-title__week{
+    margin:0;
+    padding-top: 0;
+    font-family: Roboto regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+    margin-left:104px;
+}
+
+@media screen and (min-width:600px) and  (max-width:800px){
+    .analitika-title__week{
+       margin-left: 40px;
+    }
+}
+
+@media screen and (min-width:320px) and  (max-width:599px){
+    .analitika-title__week{
+       width: 288px; 
+       display: flex;
+       text-align: left;
+       margin-left: auto;
+       margin-right: auto;
+    }
+}

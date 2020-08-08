@@ -1,0 +1,28 @@
+.author__text-contener{
+    display:flex;
+    flex-direction: column;
+    max-width: 600px;
+    max-height: 100%;
+}
+
+@media screen and (min-width:768px) and  (max-width:1237px){
+    .author__text-contener{
+       margin-left: 10px;
+       margin-right: auto;
+       max-width: 400px;
+    }
+}
+@media screen and (min-width:320px) and  (max-width:894px){
+    .author__text-contener{
+        margin-left: 32px;
+    }
+}
+@media screen and (min-width:320px) and  (max-width:767px){
+    .author__text-contener{
+        margin-top: 40px;
+        max-width: 288px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+

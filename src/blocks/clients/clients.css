@@ -1,0 +1,42 @@
+@import url("./__title/clients__title.css");
+@import url("./__description/clients__description.css");
+.clients{
+    display: flex;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 94px;
+}
+
+@media screen and (min-width:700px) and  (max-width:768px){
+    .clients{
+        margin: 0 auto;
+        max-width: 688px;
+        margin-bottom: 26px;
+    }
+}
+@media screen and (min-width:500px) and  (max-width:699px){
+    .clients{
+        margin: 0 auto;
+        max-width: 400px;
+        margin-bottom: 26px;
+    }
+}
+
+@media screen and (min-width:420px) and  (max-width:499px){
+    .clients{
+        margin: 0 auto;
+        max-width: 400px;
+        margin-bottom: 26px;
+    }
+}
+
+@media screen and (min-width:320px) and  (max-width:419px){
+    .clients{
+        margin: 0 auto;
+        max-width: 288px;
+        margin-bottom: 26px;
+    }
+}

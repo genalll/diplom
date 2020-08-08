@@ -1,0 +1,4 @@
+.slide__contackt-container{
+    display: flex;
+    flex-direction: column;
+}

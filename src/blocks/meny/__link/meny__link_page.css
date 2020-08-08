@@ -1,0 +1,16 @@
+.meny__link_page{
+    color:white;
+    padding-bottom: 25px;
+    border-bottom: solid 3px white;
+}
+
+
+
+@media screen and (min-width:320px) and  (max-width:768px){
+    .meny__link_page{
+        border-bottom:none;
+        padding: 0;
+        color: #B6BCBF;
+        padding-bottom: 12px;
+    }
+}

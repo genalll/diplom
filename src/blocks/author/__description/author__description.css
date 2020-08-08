@@ -1,0 +1,36 @@
+.author__description{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 36px;
+    font-family: Roboto regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1B22;
+}
+
+@media screen and (min-width:1000px) and  (max-width:1237px){
+    .author__description{
+
+    }
+}
+
+@media screen and (min-width:895px) and  (max-width:999px){
+    .author__description{
+        
+       
+    }
+}
+
+@media screen and (min-width:320px) and  (max-width:894px){
+    .author__description{
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width:320px) and  (max-width:767px){
+    .author__description{
+        max-width: 288px;
+    }
+}

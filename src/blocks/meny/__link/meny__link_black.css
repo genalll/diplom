@@ -1,0 +1,15 @@
+.meny__link_black{
+    font-family: Roboto regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #B6BCBF;
+}
+@media screen and (min-width:320px) and  (max-width:768px){
+    .meny__link_black{
+        padding-bottom: 13px;
+        
+        border-bottom: solid 3px white;
+    }
+}

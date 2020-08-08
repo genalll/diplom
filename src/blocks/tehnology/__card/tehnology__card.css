@@ -1,0 +1,14 @@
+.tehnology__card{
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width:320px) and  (max-width:699px){
+    .tehnology__card{
+        margin-right: 0;
+    }
+ }

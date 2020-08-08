@@ -1,0 +1,27 @@
+@import url("../slide/__data/slide__data.css");
+@import url("../slide/__name-container/slide__name-container.css");
+@import url("../slide/__image-container/slide__image-container.css");
+@import url("../slide/__contackt-container/slide__contackt-container.css");
+@import url("../slide/__name/slide__name.css");
+@import url("../slide/__mail-linck/slide__mail-linck.css");
+@import url("../slide/__description/slide__description.css");
+.slide{
+    display:flex;
+    flex-direction: column;
+    width:400px;
+    height: 288px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    z-index: 10;
+}
+
+@media screen and (min-width:610px) and  (max-width:896px){
+    .slide{ 
+    width:336px;
+    height: 242px;}
+}
+@media screen and (min-width:320px) and  (max-width:609px){
+    .slide{ 
+    width:288px;
+    height: 264px;}
+}

@@ -1,0 +1,9 @@
+.analitika-table__scale_first{
+    margin-top: 18px;
+ }
+
+ @media screen and (min-width:320px) and  (max-width:599px){
+    .analitika-table__scale_first{
+        margin-top: 20px;
+    }
+}

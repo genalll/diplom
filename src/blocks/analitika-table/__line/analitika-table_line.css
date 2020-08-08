@@ -1,0 +1,10 @@
+.analitika-table__line{
+    display: block;
+    max-width: 1232px;
+    height: 0;
+    border: 1px solid #1A1B22;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:14px;
+}
