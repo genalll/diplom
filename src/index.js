@@ -29,6 +29,7 @@ event.preventDefault();
 Contener.setAttribute('style', "display:" + "flex"+";");
 palaceContener.innerHTML="";
 const nameSearch = document.querySelector(".search__input").value;
+DataStorages.addTolocalStorage("name",document.querySelector(".search__input").value);
 NewsApitoAnaliser.getNevs("q="+nameSearch+"&")
     .then(res => {
         if (res.ok) {
@@ -62,7 +63,7 @@ function searchMore(){
     //console.log(DataStorages.getTolocalStorage("nevsArr"))
     let massivRender=DataStorages.getTolocalStorage("nevsArr").slice(0,DataStorages.getTolocalStorage("nevsArr").length - DataStorages.getTolocalStorage("nevsArrPush").length);
     DataStorages.addTolocalStorage("massivRender",massivRender);
-console.log(massivRender);
+console.log(DataStorages.getTolocalStorage("name"));
 };
 
 
@@ -74,6 +75,7 @@ if (DataStorages.getTolocalStorage("massivRender")){
             const NewsCards = new NewsCard(element);
             palaceContener.appendChild(NewsCards.cardCreate());
         });
+        document.querySelector(".search__input").value = DataStorages.getTolocalStorage("name");
     }
     
     
