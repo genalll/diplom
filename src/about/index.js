@@ -79,7 +79,7 @@ GithubApis.getCommits()
 const datastorage = new DataStorage();
 
 
-datastorage.addTolocalStorage("ler",{d:"strit"});
+datastorage.addTolocalStorage("ler",{d:"strits"});
 console.log(datastorage.getTolocalStorage("ler"));
 
 /* Дата сторож */
