@@ -1,15 +1,12 @@
 export default class DataStorage {
-    constructor(data) {
-        this.data=data;
-    }
    
-    addTolocalStorage(dataName){
-        let json = JSON.stringify(this.data);
+    addTolocalStorage(dataName,obj){
+        let json = JSON.stringify(obj);
         localStorage.setItem(dataName, json);
     }
 
-    getTolocalStorage(dataName){
-       return JSON.parse(localStorage.getItem(dataName));
+    getTolocalStorage(dataN){
+       return JSON.parse(localStorage.getItem(dataN));
     }
 
 }

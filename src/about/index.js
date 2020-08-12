@@ -76,9 +76,10 @@ GithubApis.getCommits()
 
 
 /* Дата сторож */
-const datastorage = new DataStorage("...");
+const datastorage = new DataStorage();
 
 
-datastorage.addTolocalStorage("гитхаб");
-console.log(datastorage.getTolocalStorage("гитхаб"));
+datastorage.addTolocalStorage("ler",{d:"strit"});
+console.log(datastorage.getTolocalStorage("ler"));
+
 /* Дата сторож */
