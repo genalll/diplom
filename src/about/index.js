@@ -3,8 +3,9 @@ import "../page/infostyle.css";
 import Swiper from '../../node_modules/swiper/swiper-bundle.js';
 import GithubApi from '../js/modules/githubapi.js';
 import CommitCard from '../js/components/commitcard.js';
+import DataStorage from "../js/modules/datastorage.js";
 
-console.log("info");
+
 
 const mySwiper= new Swiper('.swiper-container', {
     direction: 'horizontal',
@@ -64,11 +65,20 @@ GithubApis.getCommits()
     }
 })
 .then(data => {
-    console.log(data[0]);
-    console.log(new CommitCard(data[0]));
+   // console.log(data[0]);
+    //console.log(new CommitCard(data[0]));
 
 })
 .catch((err) => {
     console.log(err);
 });
 /* Получаем коммиты гитхаба */
+
+
+/* Дата сторож */
+const datastorage = new DataStorage("член");
+
+
+datastorage.addTolocalStorage("гитхаб");
+console.log(datastorage.getTolocalStorage("гитхаб"));
+/* Дата сторож */
