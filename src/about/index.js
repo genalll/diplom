@@ -76,7 +76,7 @@ GithubApis.getCommits()
 
 
 /* Дата сторож */
-const datastorage = new DataStorage("член");
+const datastorage = new DataStorage("...");
 
 
 datastorage.addTolocalStorage("гитхаб");
