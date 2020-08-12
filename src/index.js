@@ -2,8 +2,7 @@ import "./vendor/normalise.css";
 import "./page/style.css";
 import NewsApi from './js/modules/newsapi.js';
 import NewsCard from './js/components/newscard.js';
-import GithubApi from './js/modules/githubapi.js';
-import CommitCard from './js/components/commitcard.js';
+
 
 
 
@@ -29,6 +28,7 @@ NewsApitoAnaliser.getNevs("q=Екатеринбург&")
         console.log(data);
         /* Создаем 1 карту */
         const NewsCards = new NewsCard(data.articles[0]);
+        console.log(NewsCards);
         /* Создаем 1 карту */
     })
     .catch((err) => {
@@ -42,25 +42,3 @@ NewsApitoAnaliser.getNevs("q=Екатеринбург&")
 
 
 
-/* Получаем коммиты гитхаба */
-
-/* Константы для настройки гитхаб апи */
-const urlGithub = "https://api.github.com/repos/genalll/diplom/commits"
-/* Константы для настройки гитхаб апи */
-const GithubApis = new GithubApi(urlGithub);
-GithubApis.getCommits()
-.then(res => {
-    if (res.ok) {
-        console.log("ОК")
-        return res.json();
-    }
-})
-.then(data => {
-    console.log(data[0]);
-    console.log(new CommitCard(data[0]));
-
-})
-.catch((err) => {
-    console.log(err);
-});
-/* Получаем коммиты гитхаба */

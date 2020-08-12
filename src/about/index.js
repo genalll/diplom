@@ -1,6 +1,8 @@
 import "../vendor/normalise.css";
 import "../page/infostyle.css";
 import Swiper from '../../node_modules/swiper/swiper-bundle.js';
+import GithubApi from '../js/modules/githubapi.js';
+import CommitCard from '../js/components/commitcard.js';
 
 console.log("info");
 
@@ -46,3 +48,27 @@ const mySwiper= new Swiper('.swiper-container', {
       }
     
   })
+
+
+  /* Получаем коммиты гитхаба */
+
+/* Константы для настройки гитхаб апи */
+const urlGithub = "https://api.github.com/repos/genalll/diplom/commits"
+/* Константы для настройки гитхаб апи */
+const GithubApis = new GithubApi(urlGithub);
+GithubApis.getCommits()
+.then(res => {
+    if (res.ok) {
+        console.log("ОК")
+        return res.json();
+    }
+})
+.then(data => {
+    console.log(data[0]);
+    console.log(new CommitCard(data[0]));
+
+})
+.catch((err) => {
+    console.log(err);
+});
+/* Получаем коммиты гитхаба */
