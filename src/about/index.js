@@ -4,7 +4,9 @@ import Swiper from '../../node_modules/swiper/swiper-bundle.js';
 import GithubApi from '../js/modules/githubapi.js';
 import CommitCard from '../js/components/commitcard.js';
 import DataStorage from "../js/modules/datastorage.js";
+import Datas from "../js/utelites/utilites.js";
 const DataStorageGithub = new DataStorage();
+const dataSet = new Datas();
 
 
 
@@ -66,6 +68,9 @@ GithubApis.getCommits()
     }
 })
 .then(data => {
+        data.forEach(element => {
+          element.commit.committer.date = dataSet.dataTransform(element.commit.committer.date);
+        });
         DataStorageGithub.addTolocalStorage("massivRenderSlide", data.slice(0,20));
         DataStorageGithub.getTolocalStorage("massivRenderSlide").forEach(element => {
           const CommitCards = new CommitCard(element);
@@ -77,5 +82,9 @@ GithubApis.getCommits()
     console.log(err);
 });
 /* Получаем коммиты гитхаба */
+
+
+
+
 
 

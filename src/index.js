@@ -3,6 +3,7 @@ import "./page/style.css";
 import NewsApi from './js/modules/newsapi.js';
 import NewsCard from './js/components/newscard.js';
 import DataStorage from "./js/modules/datastorage.js";
+import Datas from "./js/utelites/utilites.js";
 const palaceContener = document.querySelector(".result-container__cards");
 const Contener = document.querySelector(".result-container");
 const DataStorages = new DataStorage();
@@ -10,6 +11,7 @@ const searchButton = document.querySelector(".search__button");
 const searchMoreBtn = document.querySelector(".result-container__more");
 const preLoader = document.querySelector(".search-result");
 const noResult = document.querySelector(".noresult");
+const dataSet = new Datas();
 
 
 
@@ -18,7 +20,7 @@ const noResult = document.querySelector(".noresult");
 
 /**Константы для настройки апи новостей **/
 const url = 'https://praktikum.tk/news/v2/everything?';
-const date = 'from=2020-08-05&';
+const date = 'from='+dataSet.getDataSevenDaysAgo()+'&';
 const sort = "sortBy=popularity&";
 const apiKey = 'apiKey=0de7c12f4e8247faada22fa0dfb2c30d';
 /**Константы для настройки апи новостей **/
@@ -27,6 +29,7 @@ const NewsApitoAnaliser = new NewsApi(url, date, sort, apiKey);
 
 
 function searchSubmit() {
+    searchMoreBtn.removeAttribute('style', "display");
     Contener.setAttribute('style', "display:" + "flex" + ";");
     preLoader.setAttribute('style', "display:" + "flex" + ";");
     noResult.setAttribute('style', "display:" + "none" + ";");
@@ -47,6 +50,9 @@ function searchSubmit() {
                 Contener.setAttribute('style', "display:" + "none" + ";");
                 noResult.setAttribute('style', "display:" + "flex" + ";");
             }
+            data.articles.forEach(element => {
+                element.publishedAt = dataSet.dataTransform(element.publishedAt);
+              });
             console.log(data);
             preLoader.setAttribute('style', "display:" + "none" + ";");
             DataStorages.addTolocalStorage("nevsArr", data.articles);
@@ -74,7 +80,7 @@ function searchMore() {
     let massivRender = DataStorages.getTolocalStorage("nevsArr").slice(0, DataStorages.getTolocalStorage("nevsArr").length - DataStorages.getTolocalStorage("nevsArrPush").length);
     DataStorages.addTolocalStorage("massivRender", massivRender);
     console.log(DataStorages.getTolocalStorage("massivRender"));
-    if (DataStorages.getTolocalStorage("massivRender").length>=100){
+    if (DataStorages.getTolocalStorage("nevsArrPush").length==0){
         searchMoreBtn.setAttribute('style', "display:" + "none" + ";");
     }
 };
