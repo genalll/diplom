@@ -20,7 +20,7 @@
 .search__button:hover{
     background-color: #347EFF;
 }
-.search__button:active{
+.search__button_active{
     background-color: #2A65CC;
 }
 

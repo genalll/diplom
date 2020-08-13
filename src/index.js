@@ -4,6 +4,7 @@ import NewsApi from './js/modules/newsapi.js';
 import NewsCard from './js/components/newscard.js';
 import DataStorage from "./js/modules/datastorage.js";
 import Datas from "./js/utelites/utilites.js";
+import FormValidator from "./js/components/formvalid.js";
 const palaceContener = document.querySelector(".result-container__cards");
 const Contener = document.querySelector(".result-container");
 const DataStorages = new DataStorage();
@@ -12,6 +13,8 @@ const searchMoreBtn = document.querySelector(".result-container__more");
 const preLoader = document.querySelector(".search-result");
 const noResult = document.querySelector(".noresult");
 const dataSet = new Datas();
+const FormValidators = new FormValidator(document.querySelector(".search__form"));
+
 
 
 
@@ -103,7 +106,7 @@ if (DataStorages.getTolocalStorage("massivRender").length!=0) {
 
 searchButton.addEventListener('click', searchSubmit);
 searchMoreBtn.addEventListener('click', searchMore);
-
+FormValidators.valid();
 
 
 
