@@ -7,7 +7,7 @@ export default class NewsApi {
     }
 
     getNevs(theme) {
-        return fetch(this.url+theme+"language=ru&"+this.date+this.sort+this.apikey)
+        return fetch(this.url+theme+"language=ru&"+"pageSize=100&"+this.date+this.sort+this.apikey)
     }
 
 }

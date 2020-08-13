@@ -72,7 +72,10 @@ function searchMore() {
     //console.log(DataStorages.getTolocalStorage("nevsArr"))
     let massivRender = DataStorages.getTolocalStorage("nevsArr").slice(0, DataStorages.getTolocalStorage("nevsArr").length - DataStorages.getTolocalStorage("nevsArrPush").length);
     DataStorages.addTolocalStorage("massivRender", massivRender);
-    console.log(DataStorages.getTolocalStorage("name"));
+    console.log(DataStorages.getTolocalStorage("massivRender"));
+    if (DataStorages.getTolocalStorage("massivRender").length>=100){
+        searchMoreBtn.setAttribute('style', "display:" + "none" + ";");
+    }
 };
 
 
@@ -93,6 +96,13 @@ if (DataStorages.getTolocalStorage("massivRender").length!=0) {
 
 searchButton.addEventListener('click', searchSubmit);
 searchMoreBtn.addEventListener('click', searchMore);
+
+
+
+
+
+
+
 
 
 
