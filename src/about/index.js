@@ -67,14 +67,15 @@ GithubApis.getCommits()
 })
 .then(data => {
         DataStorageGithub.addTolocalStorage("massivRenderSlide", data.slice(0,20));
+        DataStorageGithub.getTolocalStorage("massivRenderSlide").forEach(element => {
+          const CommitCards = new CommitCard(element);
+          mySwiper.appendSlide(CommitCards.CommitCardCreate());
+          console.log(CommitCards.CommitCardCreate());
+        });
 })
 .catch((err) => {
     console.log(err);
 });
 /* Получаем коммиты гитхаба */
-DataStorageGithub.getTolocalStorage("massivRenderSlide").forEach(element => {
-  const CommitCards = new CommitCard(element);
-  mySwiper.appendSlide(CommitCards.CommitCardCreate());
-  console.log(CommitCards.CommitCardCreate());
-});
+
 

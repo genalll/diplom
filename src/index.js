@@ -29,6 +29,7 @@ const NewsApitoAnaliser = new NewsApi(url, date, sort, apiKey);
 function searchSubmit() {
     Contener.setAttribute('style', "display:" + "flex" + ";");
     preLoader.setAttribute('style', "display:" + "flex" + ";");
+    noResult.setAttribute('style', "display:" + "none" + ";");
     event.preventDefault();
     palaceContener.innerHTML = "";
     const nameSearch = document.querySelector(".search__input").value;
