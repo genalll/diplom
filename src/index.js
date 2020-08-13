@@ -35,7 +35,7 @@ const NewsApitoAnaliser = new NewsApi(url, date, sort, apiKey);
 function searchSubmit() {
     erorsApi.textContent="";
     searchMoreBtn.removeAttribute('style', "display");
-    Contener.setAttribute('style', "display:" + "flex" + ";");
+    Contener.setAttribute('style', "display:" + "none" + ";");
     preLoader.setAttribute('style', "display:" + "flex" + ";");
     noResult.setAttribute('style', "display:" + "none" + ";");
     event.preventDefault();
@@ -45,7 +45,8 @@ function searchSubmit() {
     NewsApitoAnaliser.getNevs("q=" + nameSearch + "&")
         .then(res => {
             if (res.ok) {
-                console.log("ОК")
+                console.log("ОК");
+                Contener.setAttribute('style', "display:" + "flex" + ";");
                 return res.json();
             }
         })
@@ -87,9 +88,11 @@ function searchMore() {
     let massivRender = DataStorages.getTolocalStorage("nevsArr").slice(0, DataStorages.getTolocalStorage("nevsArr").length - DataStorages.getTolocalStorage("nevsArrPush").length);
     DataStorages.addTolocalStorage("massivRender", massivRender);
     console.log(DataStorages.getTolocalStorage("massivRender"));
+    if (DataStorages.getTolocalStorage("nevsArrPush")){
     if (DataStorages.getTolocalStorage("nevsArrPush").length==0){
         searchMoreBtn.setAttribute('style', "display:" + "none" + ";");
     }
+}
 };
 
 
