@@ -97,7 +97,7 @@ function searchMore() {
 
 
 
-
+if (DataStorages.getTolocalStorage("massivRender")){
 if (DataStorages.getTolocalStorage("massivRender").length!=0) {
     Contener.setAttribute('style', "display:" + "flex" + ";");
     DataStorages.getTolocalStorage("massivRender").forEach(element => {
@@ -106,6 +106,7 @@ if (DataStorages.getTolocalStorage("massivRender").length!=0) {
     });
     document.querySelector(".search__input").value = DataStorages.getTolocalStorage("name");
 };
+}
 
 
 
