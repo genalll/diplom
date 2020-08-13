@@ -28,7 +28,9 @@ export default class NewsCard {
 
         cardName.textContent = ((this.title.split(" ")).slice(0, 4)).join(" ")+"...";
         cardData.textContent = this.publishedAt;
+        if (this.description){
         cardDescription.textContent =  ((this.description.split(" ")).slice(0, 12)).join(" ")+"...";
+        }
         cardResurse.textContent =  this.name;
 
 
