@@ -14,6 +14,7 @@ const preLoader = document.querySelector(".search-result");
 const noResult = document.querySelector(".noresult");
 const dataSet = new Datas();
 const FormValidators = new FormValidator(document.querySelector(".search__form"));
+const erorsApi= document.querySelector(".eror");
 
 
 
@@ -32,6 +33,7 @@ const NewsApitoAnaliser = new NewsApi(url, date, sort, apiKey);
 
 
 function searchSubmit() {
+    erorsApi.textContent="";
     searchMoreBtn.removeAttribute('style', "display");
     Contener.setAttribute('style', "display:" + "flex" + ";");
     preLoader.setAttribute('style', "display:" + "flex" + ";");
@@ -68,6 +70,8 @@ function searchSubmit() {
         })
         .catch((err) => {
             console.log(err);
+            erorsApi.textContent=err+ " Новости не найдуться произошла ошибка сети.";
+            Contener.setAttribute('style', "display:" + "none" + ";");
         });
 }
 /* Получаем json новостей */
