@@ -8,6 +8,8 @@ const Contener = document.querySelector(".result-container");
 const DataStorages = new DataStorage();
 const searchButton = document.querySelector(".search__button");
 const searchMoreBtn = document.querySelector(".result-container__more");
+const preLoader = document.querySelector(".search-result");
+const noResult = document.querySelector(".noresult");
 
 
 
@@ -25,8 +27,9 @@ const NewsApitoAnaliser = new NewsApi(url, date, sort, apiKey);
 
 
 function searchSubmit() {
-    event.preventDefault();
     Contener.setAttribute('style', "display:" + "flex" + ";");
+    preLoader.setAttribute('style', "display:" + "flex" + ";");
+    event.preventDefault();
     palaceContener.innerHTML = "";
     const nameSearch = document.querySelector(".search__input").value;
     DataStorages.addTolocalStorage("name", document.querySelector(".search__input").value);
@@ -38,7 +41,13 @@ function searchSubmit() {
             }
         })
         .then(data => {
+            if (data.articles.length<1){
+                preLoader.setAttribute('style', "display:" + "none" + ";");
+                Contener.setAttribute('style', "display:" + "none" + ";");
+                noResult.setAttribute('style', "display:" + "flex" + ";");
+            }
             console.log(data);
+            preLoader.setAttribute('style', "display:" + "none" + ";");
             DataStorages.addTolocalStorage("nevsArr", data.articles);
             DataStorages.getTolocalStorage("nevsArr").slice(0, 3).forEach(element => {
                 const NewsCards = new NewsCard(element);
@@ -69,14 +78,16 @@ function searchMore() {
 
 
 
-if (DataStorages.getTolocalStorage("massivRender")) {
+if (DataStorages.getTolocalStorage("massivRender").length!=0) {
     Contener.setAttribute('style', "display:" + "flex" + ";");
     DataStorages.getTolocalStorage("massivRender").forEach(element => {
         const NewsCards = new NewsCard(element);
         palaceContener.appendChild(NewsCards.cardCreate());
     });
     document.querySelector(".search__input").value = DataStorages.getTolocalStorage("name");
-}
+};
+
+
 
 
 

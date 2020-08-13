@@ -2,7 +2,6 @@
 @import url("./__more/result-container__more.css");
 
 .result-container{
-    display: flex;
     display: none;
     flex-direction: column;
     align-items: center;
