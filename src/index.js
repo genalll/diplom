@@ -71,7 +71,7 @@ function searchSubmit() {
         })
         .catch((err) => {
             console.log(err);
-            erorsApi.textContent=err+ " Новости не найдуться произошла ошибка сети.";
+            erorsApi.textContent=err+ " Новости не найдутся произошла ошибка сети.";
             Contener.setAttribute('style', "display:" + "none" + ";");
         });
 }
@@ -83,12 +83,12 @@ function searchMore() {
         palaceContener.appendChild(NewsCards.cardCreate());
     });
     DataStorages.addTolocalStorage("nevsArrPush", DataStorages.getTolocalStorage("nevsArrPush").slice(3));
-    //console.log(DataStorages.getTolocalStorage("nevsArrPush"))
-    //console.log(DataStorages.getTolocalStorage("nevsArr"))
+    console.log(DataStorages.getTolocalStorage("nevsArrPush"))
+    console.log(DataStorages.getTolocalStorage("nevsArr"))
+    if (DataStorages.getTolocalStorage("nevsArrPush")>=0 && DataStorages.getTolocalStorage("nevsArr")>=0){
     let massivRender = DataStorages.getTolocalStorage("nevsArr").slice(0, DataStorages.getTolocalStorage("nevsArr").length - DataStorages.getTolocalStorage("nevsArrPush").length);
     DataStorages.addTolocalStorage("massivRender", massivRender);
     console.log(DataStorages.getTolocalStorage("massivRender"));
-    if (DataStorages.getTolocalStorage("nevsArrPush")){
     if (DataStorages.getTolocalStorage("nevsArrPush").length==0){
         searchMoreBtn.setAttribute('style', "display:" + "none" + ";");
     }
@@ -97,7 +97,7 @@ function searchMore() {
 
 
 
-if (DataStorages.getTolocalStorage("massivRender")){
+if (DataStorages.getTolocalStorage("massivRender")>0){
 if (DataStorages.getTolocalStorage("massivRender").length!=0) {
     Contener.setAttribute('style', "display:" + "flex" + ";");
     DataStorages.getTolocalStorage("massivRender").forEach(element => {
