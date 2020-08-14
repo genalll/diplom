@@ -21,9 +21,11 @@ if (nevsArrforCheck){
 function checkTitleResult(arr){
      let result=0;
      arr.forEach(element => {
+        if(element.title!=null){
         if (element.title.indexOf(nameSearchValue)){
             result+=1;
         };
+    }
      });
      return result
 }
