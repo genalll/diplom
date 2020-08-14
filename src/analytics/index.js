@@ -6,8 +6,10 @@ const nameSearch = document.querySelector(".analitika-title__title");
 const totalResult = document.querySelector("#totalresuilt");
 const totalResultTitle = document.querySelector("#totalresuiltitle");
 const nevsArrforCheck = DataStorages.getTolocalStorage("nevsArrForData");
-
 const nameSearchValue =DataStorages.getTolocalStorage("name");
+const analitikaTableWeek = document.querySelectorAll(".analitika-table__week-day");
+const analitikaTabldayValue = document.querySelectorAll(".analitika-table__scale");
+
 
 if (nameSearchValue){
 nameSearch.textContent=nameSearchValue;
@@ -170,5 +172,16 @@ console.log(dayAndWeek);
 console.log(totalOfDayMassiv);
 console.log(totalOfDaypercent);
 
+analitikaTableWeek.forEach(function(item, i, arr) {
+    item.textContent=dayAndWeek[i]
+  });
+
+analitikaTabldayValue.forEach(function(item, i, arr) {
+    item.textContent=totalOfDayMassiv[i]
+  });
+
+analitikaTabldayValue.forEach(function(item, i, arr) {
+    item.setAttribute('style', "width:" + totalOfDaypercent[i] +"%" + ";");
+  });
 
 
