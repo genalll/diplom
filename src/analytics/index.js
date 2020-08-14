@@ -29,12 +29,16 @@ function checkTitleResult(arr){
 function checkTotalResult(arr){
     let result=0;
     arr.forEach(element => {
+        if(element.title!=null){
        if (element.title.indexOf(nameSearchValue)){
            result+=1;
        };
+    }
+       if(element.description!=null){
        if (element.description.indexOf(nameSearchValue)){
         result+=1;
     };
+    }
     });
     return result
 }
