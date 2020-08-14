@@ -24,7 +24,7 @@ const erorsApi= document.querySelector(".eror");
 /* Получаем json новостей */
 
 /**Константы для настройки апи новостей **/
-const url = 'https://nomoreparties.co/news/v2/everything';
+const url = 'https://nomoreparties.co/news/v2/everything?';
 const date = 'from='+dataSet.getDataSevenDaysAgo()+'&';
 const sort = "sortBy=popularity&";
 const apiKey = 'apiKey=0de7c12f4e8247faada22fa0dfb2c30d';
