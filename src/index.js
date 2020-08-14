@@ -20,10 +20,11 @@ const erorsApi= document.querySelector(".eror");
 
 
 
+
 /* Получаем json новостей */
 
 /**Константы для настройки апи новостей **/
-const url = 'https://praktikum.tk/news/v2/everything?';
+const url = 'http://newsapi.org/v2/everything?';
 const date = 'from='+dataSet.getDataSevenDaysAgo()+'&';
 const sort = "sortBy=popularity&";
 const apiKey = 'apiKey=0de7c12f4e8247faada22fa0dfb2c30d';
@@ -35,7 +36,7 @@ const NewsApitoAnaliser = new NewsApi(url, date, sort, apiKey);
 function searchSubmit() {
     erorsApi.textContent="";
     searchMoreBtn.removeAttribute('style', "display");
-    Contener.setAttribute('style', "display:" + "none" + ";");
+    //Contener.setAttribute('style', "display:" + "none" + ";");
     preLoader.setAttribute('style', "display:" + "flex" + ";");
     noResult.setAttribute('style', "display:" + "none" + ";");
     event.preventDefault();
@@ -85,20 +86,19 @@ function searchMore() {
     DataStorages.addTolocalStorage("nevsArrPush", DataStorages.getTolocalStorage("nevsArrPush").slice(3));
     console.log(DataStorages.getTolocalStorage("nevsArrPush"))
     console.log(DataStorages.getTolocalStorage("nevsArr"))
-    if (DataStorages.getTolocalStorage("nevsArrPush")>=0 && DataStorages.getTolocalStorage("nevsArr")>=0){
     let massivRender = DataStorages.getTolocalStorage("nevsArr").slice(0, DataStorages.getTolocalStorage("nevsArr").length - DataStorages.getTolocalStorage("nevsArrPush").length);
     DataStorages.addTolocalStorage("massivRender", massivRender);
     console.log(DataStorages.getTolocalStorage("massivRender"));
     if (DataStorages.getTolocalStorage("nevsArrPush").length==0){
         searchMoreBtn.setAttribute('style', "display:" + "none" + ";");
     }
-}
+
 };
 
 
 
-if (DataStorages.getTolocalStorage("massivRender")>0){
-if (DataStorages.getTolocalStorage("massivRender").length!=0) {
+
+if (DataStorages.getTolocalStorage("massivRender")!==null) {
     Contener.setAttribute('style', "display:" + "flex" + ";");
     DataStorages.getTolocalStorage("massivRender").forEach(element => {
         const NewsCards = new NewsCard(element);
@@ -106,7 +106,7 @@ if (DataStorages.getTolocalStorage("massivRender").length!=0) {
     });
     document.querySelector(".search__input").value = DataStorages.getTolocalStorage("name");
 };
-}
+
 
 
 
