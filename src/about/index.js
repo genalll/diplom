@@ -1,3 +1,4 @@
+"use strict";
 import "../vendor/normalise.css";
 import "../page/infostyle.css";
 import Swiper from '../../node_modules/swiper/swiper-bundle.js';
@@ -73,8 +74,9 @@ GithubApis.getCommits()
         });
         DataStorageGithub.addTolocalStorage("massivRenderSlide", data.slice(0,20));
         DataStorageGithub.getTolocalStorage("massivRenderSlide").forEach(element => {
-          const CommitCards = new CommitCard(element);
-          mySwiper.appendSlide(CommitCards.CommitCardCreate());
+          let CommitCards = new CommitCard(element);
+          const cards= CommitCards.CommitCardCreate()
+          mySwiper.appendSlide(cards);
           console.log(CommitCards.CommitCardCreate());
         });
 })

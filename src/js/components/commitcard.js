@@ -43,7 +43,7 @@ export default class CommitCard {
         slideElement.appendChild(slideDescription);
         swiperSlide.appendChild(slideElement);
         this.swiperSlide = swiperSlide;
-        return swiperSlide;
+        return this.swiperSlide;
 
  }
 
