@@ -46,8 +46,8 @@ totalResult.textContent=checkTotalResult(nevsArrforCheck);
 totalResultTitle.textContent=(checkTitleResult(nevsArrforCheck));
 
 
-console.log(DataStorages.getTolocalStorage("name"));
-console.log(checkTitleResult(DataStorages.getTolocalStorage("nevsArr")));
+///console.log(DataStorages.getTolocalStorage("name"));
+///console.log(checkTitleResult(DataStorages.getTolocalStorage("nevsArr")));
 
 
 
@@ -92,7 +92,7 @@ function breackArrFordata(arr){
     return [vs,pn,vt,sr,ch,pt,sub,]
 }
 
-console.log()
+
 
 
 function percentDay(arr) {
@@ -109,8 +109,66 @@ function percentDay(arr) {
 const MassivOfweekDay = (percentDay(breackArrFordata(nevsArrforCheck)))[0];
 const percentMassivOfweekDay = (percentDay(breackArrFordata(nevsArrforCheck)))[1];
 
-console.log(percentMassivOfweekDay);
-console.log(MassivOfweekDay);
+//console.log(percentMassivOfweekDay); // Массив с процентами в порядке ПН ВТ... требует сортировки
+//console.log(MassivOfweekDay); // Массив с количеством по дням недели ПН ВТ... требует сортировки
 /* Разбитие массива по дням */
+
+/*Получаем готовый массив правильных дат для сортировки массива по дням недели*/
+function getDataInterval(){
+  return [
+    new Date(((new Date().setDate(new Date().getDate()-6)))).getDay(),
+    new Date(((new Date().setDate(new Date().getDate()-5)))).getDay(),
+    new Date(((new Date().setDate(new Date().getDate()-4)))).getDay(),
+    new Date(((new Date().setDate(new Date().getDate()-3)))).getDay(),
+    new Date(((new Date().setDate(new Date().getDate()-2)))).getDay(),
+    new Date(((new Date().setDate(new Date().getDate()-1)))).getDay(),
+    new Date(((new Date().setDate(new Date().getDate()-0)))).getDay(),
+  ]
+}
+/*Получаем готовый массив правильных дат для сортировки массива с количеством и процентами*/
+/** Массив дат для отрисовки */
+
+const weckDayNumberDay = getDataInterval();
+  
+/** Массив дат для отрисовки */
+
+/*перевод значения в день недели*/
+function getDataStr(){
+    let massivWeekDay=["пн","вт","ср","чт","пт","сб","вс"]
+    return [
+      new Date(((new Date().setDate(new Date().getDate()-6)))).getDate()+ "," + " " +massivWeekDay[new Date(((new Date().setDate(new Date().getDate()-6)))).getDay()],
+      new Date(((new Date().setDate(new Date().getDate()-5)))).getDate() + "," + " " +massivWeekDay[new Date(((new Date().setDate(new Date().getDate()-5)))).getDay()],
+      new Date(((new Date().setDate(new Date().getDate()-4)))).getDate() + "," + " " +massivWeekDay[new Date(((new Date().setDate(new Date().getDate()-4)))).getDay()],
+      new Date(((new Date().setDate(new Date().getDate()-3)))).getDate() + "," + " " +massivWeekDay[new Date(((new Date().setDate(new Date().getDate()-3)))).getDay()],
+      new Date(((new Date().setDate(new Date().getDate()-2)))).getDate() + "," + " " +massivWeekDay[new Date(((new Date().setDate(new Date().getDate()-2)))).getDay()],
+      new Date(((new Date().setDate(new Date().getDate()-1)))).getDate() + "," + " " +massivWeekDay[new Date(((new Date().setDate(new Date().getDate()-1)))).getDay()],
+      new Date(((new Date().setDate(new Date().getDate()-0)))).getDate() + "," + " " +massivWeekDay[new Date(((new Date().setDate(new Date().getDate()-0)))).getDay()],
+    ]
+  }
+ //console.log(getDataStr());
+/*перевод значения в день недели*/
+//console.log(weckDayNumberDay);
+
+/*сортировка массивов для отрисовки.*/
+function sortMassivDays(arr,arrsort){
+    let sortArr=[];
+    arrsort.forEach(element => {
+        sortArr.push(arr[element])
+    });
+    return sortArr
+}
+
+/*сортировка массивов для отрисовки.*/
+
+/** константы для отисовки */
+const dayAndWeek = getDataStr();
+const totalOfDayMassiv = sortMassivDays(MassivOfweekDay,weckDayNumberDay);
+const totalOfDaypercent = sortMassivDays(percentMassivOfweekDay,weckDayNumberDay);
+/** константы для отисовки */
+
+console.log(dayAndWeek);
+console.log(totalOfDayMassiv);
+console.log(totalOfDaypercent);
+
 
 
