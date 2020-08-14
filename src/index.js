@@ -57,6 +57,7 @@ function searchSubmit() {
                 Contener.setAttribute('style', "display:" + "none" + ";");
                 noResult.setAttribute('style', "display:" + "flex" + ";");
             }
+            DataStorages.addTolocalStorage("nevsArrForData", data.articles);
             data.articles.forEach(element => {
                 element.publishedAt = dataSet.dataTransform(element.publishedAt);
               });
