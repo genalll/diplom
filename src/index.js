@@ -33,7 +33,7 @@ const apiKey = 'apiKey=0de7c12f4e8247faada22fa0dfb2c30d';
 const NewsApitoAnaliser = new NewsApi(url, date, sort, apiKey);
 
 
-function searchSubmit() {
+function searchSubmit(event) {
     erorsApi.textContent="";
     searchMoreBtn.removeAttribute('style', "display");
     //Contener.setAttribute('style', "display:" + "none" + ";");
