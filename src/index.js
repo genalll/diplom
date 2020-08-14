@@ -96,9 +96,11 @@ function searchMore() {
 };
 
 
+if (DataStorages.getTolocalStorage("nevsArrPush")){
+    Contener.setAttribute('style', "display:" + "none" + ";");
+}
 
-
-if (DataStorages.getTolocalStorage("massivRender")!==null) {
+if (DataStorages.getTolocalStorage("massivRender")!==null && DataStorages.getTolocalStorage("massivRender").length!=0 ) {
     Contener.setAttribute('style', "display:" + "flex" + ";");
     DataStorages.getTolocalStorage("massivRender").forEach(element => {
         const NewsCards = new NewsCard(element);
