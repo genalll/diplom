@@ -37,7 +37,7 @@ function searchSubmit(event) {
             }
         })
         .then(data => {
-            DataStorages.addTolocalStorage("name", document.querySelector(".search__input").value);
+             DataStorages.addTolocalStorage("name", document.querySelector(".search__input").value);
             if (data.articles.length < 1) {
                 preLoader.setAttribute('style', "display:" + "none" + ";");
                 Contener.setAttribute('style', "display:" + "none" + ";");
