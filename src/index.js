@@ -5,6 +5,7 @@ import NewsCard from './js/components/newscard.js';
 import DataStorage from "./js/modules/datastorage.js";
 import Datas from "./js/utelites/utilites.js";
 import FormValidator from "./js/components/formvalid.js";
+const numberOfCardInmore = 3;
 const palaceContener = document.querySelector(".result-container__cards");
 const Contener = document.querySelector(".result-container");
 const DataStorages = new DataStorage();
@@ -21,14 +22,13 @@ const sort = "sortBy=popularity&";
 const apiKey = 'apiKey=0de7c12f4e8247faada22fa0dfb2c30d';
 const NewsApitoAnaliser = new NewsApi(url, date, sort, apiKey);
 function searchSubmit(event) {
+    const nameSearch = document.querySelector(".search__input").value;
     erorsApi.textContent = "";
     searchMoreBtn.removeAttribute('style', "display");
     preLoader.setAttribute('style', "display:" + "flex" + ";");
     noResult.setAttribute('style', "display:" + "none" + ";");
     event.preventDefault();
     palaceContener.innerHTML = "";
-    const nameSearch = document.querySelector(".search__input").value;
-    DataStorages.addTolocalStorage("name", document.querySelector(".search__input").value);
     NewsApitoAnaliser.getNevs("q=" + nameSearch + "&")
         .then(res => {
             if (res.ok) {
@@ -37,6 +37,7 @@ function searchSubmit(event) {
             }
         })
         .then(data => {
+            DataStorages.addTolocalStorage("name", document.querySelector(".search__input").value);
             if (data.articles.length < 1) {
                 preLoader.setAttribute('style', "display:" + "none" + ";");
                 Contener.setAttribute('style', "display:" + "none" + ";");
@@ -48,12 +49,12 @@ function searchSubmit(event) {
             });
             preLoader.setAttribute('style', "display:" + "none" + ";");
             DataStorages.addTolocalStorage("nevsArr", data.articles);
-            DataStorages.getTolocalStorage("nevsArr").slice(0, 3).forEach(element => {
+            DataStorages.getTolocalStorage("nevsArr").slice(0, numberOfCardInmore).forEach(element => {
                 const NewsCards = new NewsCard(element);
                 palaceContener.appendChild(NewsCards.cardCreate());
             });
-            DataStorages.addTolocalStorage("massivRender", DataStorages.getTolocalStorage("nevsArr").slice(0, 3));
-            DataStorages.addTolocalStorage("nevsArrPush", DataStorages.getTolocalStorage("nevsArr").slice(3));
+            DataStorages.addTolocalStorage("massivRender", DataStorages.getTolocalStorage("nevsArr").slice(0, numberOfCardInmore));
+            DataStorages.addTolocalStorage("nevsArrPush", DataStorages.getTolocalStorage("nevsArr").slice(numberOfCardInmore));
         })
         .catch((err) => {
             console.log(err);
@@ -62,11 +63,11 @@ function searchSubmit(event) {
         });
 }
 function searchMore() {
-    (DataStorages.getTolocalStorage("nevsArrPush")).slice(0, 3).forEach(element => {
+    (DataStorages.getTolocalStorage("nevsArrPush")).slice(0, numberOfCardInmore).forEach(element => {
         const NewsCards = new NewsCard(element);
         palaceContener.appendChild(NewsCards.cardCreate());
     });
-    DataStorages.addTolocalStorage("nevsArrPush", DataStorages.getTolocalStorage("nevsArrPush").slice(3));
+    DataStorages.addTolocalStorage("nevsArrPush", DataStorages.getTolocalStorage("nevsArrPush").slice(numberOfCardInmore));
     let massivRender = DataStorages.getTolocalStorage("nevsArr").slice(0, DataStorages.getTolocalStorage("nevsArr").length - DataStorages.getTolocalStorage("nevsArrPush").length);
     DataStorages.addTolocalStorage("massivRender", massivRender);
     if (DataStorages.getTolocalStorage("nevsArrPush").length == 0) {
@@ -92,7 +93,7 @@ searchButton.addEventListener('click', searchSubmit);
 searchMoreBtn.addEventListener('click', searchMore);
 FormValidators.valid();
 
-
+3
 
 
 
