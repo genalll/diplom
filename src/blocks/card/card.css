@@ -5,6 +5,7 @@
 @import url("./__resurs/card__resurs.css");
 @import url("./__image-container/card__image-container_background.css");
 .card{
+    position: relative;
     width:400px;
     height: 567px;
     background: white;

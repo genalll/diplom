@@ -9,6 +9,10 @@ export default class NewsCard {
     }
 
     cardCreate() {
+        const link = document.createElement('a');
+        link.setAttribute('href', this.url);
+        link.setAttribute('target', "blanck");
+        link.classList.add("link");
         const cardElement = document.createElement('article');
         const cardImage = document.createElement('div');
         const cardData = document.createElement('p');
@@ -39,8 +43,9 @@ export default class NewsCard {
         cardElement.appendChild(cardName);
         cardElement.appendChild(cardDescription);
         cardElement.appendChild(cardResurse);
+        cardElement.appendChild(link);
         this.cardElement = cardElement;
-        return cardElement;
+        return this.cardElement;
     }
 
 }
