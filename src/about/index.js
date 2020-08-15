@@ -11,76 +11,79 @@ const dataSet = new Datas();
 
 
 
-const mySwiper= new Swiper('.swiper-container', {
-    direction: 'horizontal',
-    loop: true,
-    slidesPerView: 3,
-    spaceBetween:-180,
-    updateOnWindowResize:true,	
-    watchOverflow: false,
-    updateOnWindowResize:true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
+const mySwiper = new Swiper('.swiper-container', {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: -180,
+  updateOnWindowResize: true,
+  watchOverflow: false,
+  updateOnWindowResize: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
 
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20
     },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 30
     },
-    breakpoints: {
-        // when window width is >= 320px
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 20
-        },
-        // when window width is >= 480px
-        480: {
-          slidesPerView: 1,
-          spaceBetween: 30
-        },
-        // when window width is >= 640px
-       768: {
-          slidesPerView: 2,
-          spaceBetween: -80,
-          centeredSlidesBounds:true,
-          loop:false
-        },
-        1440: {
-            slidesPerView: 3,
-            spaceBetween: -180
-          }
-      }
-    
-  })
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 2,
+      spaceBetween: -80,
+      centeredSlidesBounds: true,
+      loop: false
+    },
+    1440: {
+      slidesPerView: 3,
+      spaceBetween: -180
+    }
+  }
+
+})
 
 
-  /* Получаем коммиты гитхаба */
+/* Получаем коммиты гитхаба */
 
 /* Константы для настройки гитхаб апи */
 const urlGithub = "https://api.github.com/repos/genalll/diplom/commits"
 /* Константы для настройки гитхаб апи */
 const GithubApis = new GithubApi(urlGithub);
 GithubApis.getCommits()
-.then(res => {
-    if (res.ok) {
-        return res.json();
+  .then(res => {
+    if (!res.ok) {
+      return Promise.reject(`Ошибка: ${res.status}`);
     }
-})
-.then(data => {
-        data.forEach(element => {
-          element.commit.committer.date = dataSet.dataTransform(element.commit.committer.date);
-        });
-        DataStorageGithub.addTolocalStorage("massivRenderSlide", data.slice(0,20));
-        DataStorageGithub.getTolocalStorage("massivRenderSlide").forEach(element => {
-          let CommitCards = new CommitCard(element);
-          const cards= CommitCards.CommitCardCreate()
-          mySwiper.appendSlide(cards);
-        });
-})
-.catch((err) => {
+    if (res.ok) {
+      return res.json();
+    }
+  })
+  .then(data => {
+    data.forEach(element => {
+      element.commit.committer.date = dataSet.dataTransform(element.commit.committer.date);
+    });
+    DataStorageGithub.addTolocalStorage("massivRenderSlide", data.slice(0, 20));
+    DataStorageGithub.getTolocalStorage("massivRenderSlide").forEach(element => {
+      let CommitCards = new CommitCard(element);
+      const cards = CommitCards.CommitCardCreate()
+      mySwiper.appendSlide(cards);
+    });
+  })
+  .catch((err) => {
     console.log(err);
-});
+  });
 /* Получаем коммиты гитхаба */
 
 

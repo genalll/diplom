@@ -31,13 +31,16 @@ function searchSubmit(event) {
     palaceContener.innerHTML = "";
     NewsApitoAnaliser.getNevs("q=" + nameSearch + "&")
         .then(res => {
+            if (!res.ok) {
+                return Promise.reject(`Ошибка: ${res.status}`);
+            }
             if (res.ok) {
                 Contener.setAttribute('style', "display:" + "flex" + ";");
                 return res.json();
             }
         })
         .then(data => {
-             DataStorages.addTolocalStorage("name", document.querySelector(".search__input").value);
+            DataStorages.addTolocalStorage("name", document.querySelector(".search__input").value);
             if (data.articles.length < 1) {
                 preLoader.setAttribute('style', "display:" + "none" + ";");
                 Contener.setAttribute('style', "display:" + "none" + ";");
