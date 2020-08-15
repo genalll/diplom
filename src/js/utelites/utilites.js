@@ -1,20 +1,20 @@
 export default class Datas {
 
     getDataSevenDaysAgo() {
-       let date = new Date();
-       let Year = date.getFullYear();
-       let  Month = date.getMonth()+1;
-       let Day = date.getDate() - 6;
-       return  Year + "-" + Month +"-" + Day 
+        let date = new Date();
+        let Year = date.getFullYear();
+        let Month = date.getMonth() + 1;
+        let Day = date.getDate() - 6;
+        return Year + "-" + Month + "-" + Day
 
     }
 
     dataTransform(data) {
-       let datae = new Date(data);
-       let Year = datae.getFullYear();
-       let  Month = datae.getMonth();
-       let Day = datae.getDate();
-       let fMonth="";
+        let datae = new Date(data);
+        let Year = datae.getFullYear();
+        let Month = datae.getMonth();
+        let Day = datae.getDate();
+        let fMonth = "";
         switch (Month) {
             case 0: fMonth = "января"; break;
             case 1: fMonth = "февраля"; break;
@@ -30,9 +30,8 @@ export default class Datas {
             case 11: fMonth = "декабря"; break;
         }
 
-        return Day+" "+fMonth+"," + " "+ Year;
+        return Day + " " + fMonth + "," + " " + Year;
     }
 
 }
 
- 

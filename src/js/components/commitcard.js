@@ -1,10 +1,10 @@
 export default class CommitCard {
     constructor(cardObj) {
-        this.name=cardObj.commit.author.name;
-        this.email=cardObj.commit.author.email;
-        this.date=cardObj.commit.committer.date;
-        this.message=cardObj.commit.message;
-        this.avatar_url=cardObj.author.avatar_url;
+        this.name = cardObj.commit.author.name;
+        this.email = cardObj.commit.author.email;
+        this.date = cardObj.commit.committer.date;
+        this.message = cardObj.commit.message;
+        this.avatar_url = cardObj.author.avatar_url;
     }
 
     CommitCardCreate() {
@@ -29,11 +29,11 @@ export default class CommitCard {
         SlideMailLinck.classList.add("slide__mail-linck");
 
         slideImage.setAttribute('style', "background-image:" + "url('" + this.avatar_url + "');");
-        slideData.textContent=this.date;
-        slideName.textContent=this.name;
-        slideDescription.textContent=this.message;
-        SlideMailLinck.textContent=this.email;
-        
+        slideData.textContent = this.date;
+        slideName.textContent = this.name;
+        slideDescription.textContent = this.message;
+        SlideMailLinck.textContent = this.email;
+
         SlideContacktContainer.appendChild(slideName);
         SlideContacktContainer.appendChild(SlideMailLinck);
         slideNameContainer.appendChild(slideImage);
@@ -45,7 +45,7 @@ export default class CommitCard {
         this.swiperSlide = swiperSlide;
         return this.swiperSlide;
 
- }
+    }
 
 }
 

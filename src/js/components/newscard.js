@@ -1,11 +1,11 @@
 export default class NewsCard {
     constructor(cardObj) {
-        this.name=cardObj.source.name;
-        this.title=cardObj.title;
-        this.publishedAt=cardObj.publishedAt;
-        this.description=cardObj.description;
-        this.urlToImage=cardObj.urlToImage;
-        this.url=cardObj.url;
+        this.name = cardObj.source.name;
+        this.title = cardObj.title;
+        this.publishedAt = cardObj.publishedAt;
+        this.description = cardObj.description;
+        this.urlToImage = cardObj.urlToImage;
+        this.url = cardObj.url;
     }
 
     cardCreate() {
@@ -28,14 +28,14 @@ export default class NewsCard {
         cardResurse.classList.add("card__resurs");
 
         cardImage.setAttribute('style', "background-image:" + "url('" + this.urlToImage + "');");
-        cardImage.textContent="";
+        cardImage.textContent = "";
 
-        cardName.textContent = ((this.title.split(" ")).slice(0, 4)).join(" ")+"...";
+        cardName.textContent = ((this.title.split(" ")).slice(0, 4)).join(" ") + "...";
         cardData.textContent = this.publishedAt;
-        if (this.description){
-        cardDescription.textContent =  ((this.description.split(" ")).slice(0, 12)).join(" ")+"...";
+        if (this.description) {
+            cardDescription.textContent = ((this.description.split(" ")).slice(0, 12)).join(" ") + "...";
         }
-        cardResurse.textContent =  this.name;
+        cardResurse.textContent = this.name;
 
 
         cardElement.appendChild(cardImage);

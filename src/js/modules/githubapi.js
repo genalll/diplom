@@ -1,6 +1,6 @@
 export default class GithubApi {
     constructor(url) {
-        this.url=url
+        this.url = url
     }
 
     getCommits() {
