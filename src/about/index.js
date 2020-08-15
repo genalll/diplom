@@ -64,7 +64,6 @@ const GithubApis = new GithubApi(urlGithub);
 GithubApis.getCommits()
 .then(res => {
     if (res.ok) {
-        console.log("ОК")
         return res.json();
     }
 })
@@ -77,7 +76,6 @@ GithubApis.getCommits()
           let CommitCards = new CommitCard(element);
           const cards= CommitCards.CommitCardCreate()
           mySwiper.appendSlide(cards);
-          console.log(CommitCards.CommitCardCreate());
         });
 })
 .catch((err) => {

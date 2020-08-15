@@ -32,7 +32,6 @@ function searchSubmit(event) {
     NewsApitoAnaliser.getNevs("q=" + nameSearch + "&")
         .then(res => {
             if (res.ok) {
-                console.log("ОК");
                 Contener.setAttribute('style', "display:" + "flex" + ";");
                 return res.json();
             }
@@ -47,7 +46,6 @@ function searchSubmit(event) {
             data.articles.forEach(element => {
                 element.publishedAt = dataSet.dataTransform(element.publishedAt);
             });
-            console.log(data);
             preLoader.setAttribute('style', "display:" + "none" + ";");
             DataStorages.addTolocalStorage("nevsArr", data.articles);
             DataStorages.getTolocalStorage("nevsArr").slice(0, 3).forEach(element => {
@@ -69,11 +67,8 @@ function searchMore() {
         palaceContener.appendChild(NewsCards.cardCreate());
     });
     DataStorages.addTolocalStorage("nevsArrPush", DataStorages.getTolocalStorage("nevsArrPush").slice(3));
-    console.log(DataStorages.getTolocalStorage("nevsArrPush"))
-    console.log(DataStorages.getTolocalStorage("nevsArr"))
     let massivRender = DataStorages.getTolocalStorage("nevsArr").slice(0, DataStorages.getTolocalStorage("nevsArr").length - DataStorages.getTolocalStorage("nevsArrPush").length);
     DataStorages.addTolocalStorage("massivRender", massivRender);
-    console.log(DataStorages.getTolocalStorage("massivRender"));
     if (DataStorages.getTolocalStorage("nevsArrPush").length == 0) {
         searchMoreBtn.setAttribute('style', "display:" + "none" + ";");
     }
