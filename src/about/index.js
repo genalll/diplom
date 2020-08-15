@@ -8,6 +8,7 @@ import DataStorage from "../js/modules/datastorage.js";
 import Datas from "../js/utelites/utilites.js";
 const DataStorageGithub = new DataStorage();
 const dataSet = new Datas();
+const commitNumber = 20;
 
 
 
@@ -75,7 +76,7 @@ GithubApis.getCommits()
     data.forEach(element => {
       element.commit.committer.date = dataSet.dataTransform(element.commit.committer.date);
     });
-    DataStorageGithub.addTolocalStorage("massivRenderSlide", data.slice(0, 20));
+    DataStorageGithub.addTolocalStorage("massivRenderSlide", data.slice(0, commitNumber));
     DataStorageGithub.getTolocalStorage("massivRenderSlide").forEach(element => {
       let CommitCards = new CommitCard(element);
       const cards = CommitCards.CommitCardCreate()
