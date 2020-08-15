@@ -64,6 +64,7 @@ const GithubApis = new GithubApi(urlGithub);
 GithubApis.getCommits()
   .then(res => {
     if (!res.ok) {
+      console.log(res.status);
       return Promise.reject(`Ошибка: ${res.status}`);
     }
     if (res.ok) {
