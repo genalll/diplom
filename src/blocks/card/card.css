@@ -5,13 +5,14 @@
 @import url("./__resurs/card__resurs.css");
 @import url("./__image-container/card__image-container_background.css");
 .card{
+    position: relative;
     width:400px;
     height: 567px;
     background: white;
     border-radius: 16px;
     margin-bottom: 16px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 22px;
 
 }
 

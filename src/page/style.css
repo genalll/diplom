@@ -12,6 +12,8 @@
 @import url("../blocks/result-container/result-container.css");
 @import url("../blocks/card/card.css");
 @import url("../blocks/titlecontainer/titlecontainer.css");
+@import url("../blocks/eror/eror.css");
+@import url("../blocks/link/link.css");
 .page{
     width: 100%;
     margin: 0 auto;
